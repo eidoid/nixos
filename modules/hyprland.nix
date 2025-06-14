@@ -53,7 +53,7 @@ in {
         "waybar"
 	"fcitx5"
       ];
-      cursor.no_hardware_cursors = true;
+      cursor.no_hardware_cursors = 1;
       xwayland.force_zero_scaling = true;
       general = {
         gaps_in = 5;
