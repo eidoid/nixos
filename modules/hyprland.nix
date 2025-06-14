@@ -10,7 +10,7 @@ in {
     systemd.enable = false;
     settings = {
       "$mainMod" = "SUPER";
-      "$term" = "kitty";
+      "$term" = "foot";
       "$menu" = "wmenu-run";
       bind = [
         "$mainMod, Q, exec, $term"
@@ -42,13 +42,6 @@ in {
         "$mainMod, mouse:273, resizewindow"
       ];
       monitor = ",preferred,auto,1.2";
-      env = [
-        "XCURSOR_SIZE,24"
-        "HYPRCURSOR_SIZE,24"
-	"HYPRCURSOR_THEME,rose-pine-hyprcursor"
-	"NIXOS_OZONE_WL,1"
-	"HYPRSHOT_DIR,Pictures/Screenshots"
-      ];
       exec-once = [
         "waybar"
 	"fcitx5"
@@ -94,6 +87,7 @@ in {
       misc = {
          disable_hyprland_logo = true;
 	 disable_splash_rendering = true;
+	 middle_click_paste = false;
       };
       input = {
          kb_layout = "us";

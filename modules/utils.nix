@@ -14,6 +14,7 @@
     wechat-uos
     pavucontrol
     hyprshot
+    uwsm
   ];
   programs.kitty = {
     enable = true;
@@ -67,7 +68,7 @@
   programs.bash = {
     enable = true;
     initExtra = ''
-      if uwsm check may-start; then
+      if uwsm check may-start && uwsm select; then
         exec uwsm start default 
       fi
       if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]

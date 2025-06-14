@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   imports = [
     ./hyprland.nix
@@ -9,8 +9,14 @@
     ./swaync.nix
     ./yazi.nix
     ./games.nix
+    ./foot.nix
+    ./sway.nix
   ];
   home.username = "eidoid";
   home.homeDirectory = "/home/eidoid";
   home.stateVersion = "25.05";
+  home.file."${config.xdg.configHome}" = {
+    source = ../dotfiles;
+    recursive = true;
+  };
 }
