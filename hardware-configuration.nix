@@ -41,16 +41,29 @@
   hardware.graphics = {
     enable = true;
   };
+  environment.systemPackages = with pkgs; [
+    amdgpu_top
+  ];
   # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" "amdgpu" ];
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = true;
+    powerManagement.enable = false;
     powerManagement.finegrained = false;
     open = true;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+    prime = {
+      # sync or offload
+      # sync.enable = true;
+      offload = {
+        enable = true;
+	enableOffloadCmd = true;
+      };
+      amdgpuBusId = "PCI:5:0:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
   };
-  services.logind.lidSwitch = "poweroff";
-  services.logind.lidSwitchExternalPower = "ignore";
+  services.logind.lidSwitch = "suspend";
+  services.logind.lidSwitchExternalPower = "hibernate";
 }

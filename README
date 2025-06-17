@@ -1,0 +1,3 @@
+## NVIDIA Settings
+hardware-configuration.nix
+modules/sway.nix & modules/sway-nvidia/nix

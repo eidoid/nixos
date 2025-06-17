@@ -14,7 +14,7 @@
     wechat-uos
     pavucontrol
     hyprshot
-    uwsm
+    firefox
   ];
   programs.kitty = {
     enable = true;

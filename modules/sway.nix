@@ -1,7 +1,11 @@
 { config, pkgs, ... }:
+let
+  sway-nvidia = pkgs.callPackage ./sway-nvidia.nix {};
+in
 {
   wayland.windowManager.sway = {
     enable = true;
+    package = sway-nvidia;
     wrapperFeatures.gtk = true;
     config = rec {
       modifier = "Mod4";
@@ -42,7 +46,7 @@
         pointer_accel = "-0.5";
       };
       output."*" = {
-        scale = "1.2";
+        scale = "1";
       };
       seat."*" = {
         hide_cursor = "when-typing enable";
