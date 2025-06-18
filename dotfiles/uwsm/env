@@ -1,5 +1,3 @@
 export XCURSOR_SIZE=24
-export HYPRCURSOR_SIZE=24
-export HYPRCURSOR_THEME=rose-pine-hyprcursor
 export NIXOS_OZONE_WL=1
 export HYPRSHOT_DIR=Pictures/Screenshots
