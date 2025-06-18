@@ -30,7 +30,7 @@
           GroupOrder."0" = "Default";
         };
         addons = {
-          classicui.globalSection.Theme = "catppuccin-frappe-sky";
+	  classicui.globalSection.Theme = "catppuccin-frappe-sky";
           classicui.globalSection.DarkTheme = "catppuccin-frappe-sky";
           pinyin.globalSection = {
             PageSize = 9;

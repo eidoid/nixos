@@ -6,11 +6,14 @@
       mainBar = {
         height = 24;
         "modules-left" = [
-          "hyprland/workspaces"
-          "hyprland/mode"
-          "hyprland/scratchpad"
+          # "hyprland/workspaces"
+          # "hyprland/mode"
+          # "hyprland/scratchpad"
+          "sway/workspaces"
+          "sway/mode"
+          "sway/scratchpad"
         ];
-        "modules-center" = ["hyprland/window"];
+        "modules-center" = ["sway/window"];
         "modules-right" = [
           "idle_inhibitor"
           "temperature"
@@ -26,7 +29,22 @@
           "clock"
 	  "custom/notification"
         ];
-    
+
+	"sway/workspaces" = {
+	  format = "{icon}";
+	  "format-icons" = {
+	    "1" = "I";
+	    "2" = "II";
+	    "3" = "III";
+	    "4" = "IV";
+	    "5" = "V";
+	    "6" = "VI";
+	    "7" = "VII";
+	    "8" = "VIII";
+	    "9" = "S";
+	  };
+	};
+
         "keyboard-state" = {
           numlock = true;
           capslock = true;

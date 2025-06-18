@@ -8,6 +8,7 @@ in
     package = sway-nvidia;
     wrapperFeatures.gtk = true;
     config = rec {
+      workspaceAutoBackAndForth = true;
       modifier = "Mod4";
       terminal = "foot";
       menu = "wmenu-run";
@@ -23,14 +24,16 @@ in
         "${modifier}+j" = "focus down";
         "${modifier}+k" = "focus up";
         "${modifier}+l" = "focus right";
-        "${modifier}+s" = "scratchpad show";
-        "${modifier}+Shift+s" = "move scratchpad";
+        "${modifier}+s" = "workspace number 9";
+        "${modifier}+Shift+s" = "move container to workspace number 9";
+        # "${modifier}+s" = "scratchpad show";
+        # "${modifier}+Shift+s" = "move scratchpad";
       } // builtins.listToAttrs (builtins.concatLists (builtins.genList (i:
         let ws = i + 1; in [
           { name = "${modifier}+${toString (i+1)}"; value = "workspace number ${toString ws}"; }
           { name = "${modifier}+Shift+${toString (i+1)}"; value = "move container to workspace number ${toString ws}"; }
         ]
-      ) 9));
+      ) 8));
 
       input."type:keyboard" = {
         xkb_layout = "us";
@@ -65,7 +68,7 @@ in
       ];
       
       window = {
-        border = 2;
+        border = 5;
         titlebar = false;
         commands = [
           { command = "floating enable"; criteria = { app_id = "QQ"; }; }
@@ -87,6 +90,41 @@ in
         { command = "fcitx5"; }
       ];
     };
+    extraConfig = ''
+      set $rosewater #f2d5cf
+      set $flamingo #eebebe
+      set $pink #f4b8e4
+      set $mauve #ca9ee6
+      set $red #e78284
+      set $maroon #ea999c
+      set $peach #ef9f76
+      set $yellow #e5c890
+      set $green #a6d189
+      set $teal #81c8be
+      set $sky #99d1db
+      set $sapphire #85c1dc
+      set $blue #8caaee
+      set $lavender #babbf1
+      set $text #c6d0f5
+      set $subtext1 #b5bfe2
+      set $subtext0 #a5adce
+      set $overlay2 #949cbb
+      set $overlay1 #838ba7
+      set $overlay0 #737994
+      set $surface2 #626880
+      set $surface1 #51576d
+      set $surface0 #414559
+      set $base #303446
+      set $mantle #292c3c
+      set $crust #232634
+      set $nothing #ffffff00
+      client.focused           $lavender $base $text  $rosewater $lavender
+      client.focused_inactive  $overlay0 $base $text  $rosewater $nothing
+      client.unfocused         $overlay0 $base $text  $rosewater $nothing
+      client.urgent            $peach    $base $peach $overlay0  $peach
+      client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+      client.background        $base
+    '';
   };
 
   xdg.portal = {

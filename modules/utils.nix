@@ -16,6 +16,20 @@
     hyprshot
     firefox
   ];
+  home.pointerCursor = {
+    # name = "BreezeX-RosePine-Linux";
+    # package = pkgs.rose-pine-cursor;
+    name = "catppuccin-frappe-lavender-cursors";
+    package = pkgs.catppuccin-cursors.frappeLavender;
+    size = 24;
+    x11 = {
+      enable = true;
+      # defaultCursor = "BreezeX-RosePine-Linux";
+      defaultCursor = "catppuccin-frappe-lavender-cursors";
+    };
+    gtk.enable = true;
+    sway.enable = true;
+  };
   programs.kitty = {
     enable = true;
     font = {
