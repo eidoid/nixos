@@ -7,6 +7,7 @@
       extensions = with pkgs.vscode-extensions; [
         catppuccin.catppuccin-vsc-icons
         catppuccin.catppuccin-vsc
+	vscodevim.vim
       ];
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Frappé";

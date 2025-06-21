@@ -11,6 +11,8 @@
     ./games.nix
     ./foot.nix
     ./sway.nix
+    ./neovim.nix
+    ./fuzzel.nix
   ];
   home.username = "eidoid";
   home.homeDirectory = "/home/eidoid";

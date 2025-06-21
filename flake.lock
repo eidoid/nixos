@@ -21,26 +21,6 @@
         "type": "github"
       }
     },
-    "catppuccin": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1750153510,
-        "narHash": "sha256-NYHXXJZ9m4fJpKk9tKn/EExX87SqcBcRINOGF7hKRLI=",
-        "owner": "catppuccin",
-        "repo": "nix",
-        "rev": "4e95eaf8a351956d75cc400318579967ca2b6d0f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "catppuccin",
-        "repo": "nix",
-        "type": "github"
-      }
-    },
     "eidoid": {
       "inputs": {
         "nixpkgs": [
@@ -173,7 +153,6 @@
     "root": {
       "inputs": {
         "aagl": "aagl",
-        "catppuccin": "catppuccin",
         "eidoid": "eidoid",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",

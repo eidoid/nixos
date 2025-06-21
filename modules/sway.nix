@@ -11,7 +11,7 @@ in
       workspaceAutoBackAndForth = true;
       modifier = "Mod4";
       terminal = "foot";
-      menu = "wmenu-run";
+      menu = "fuzzel";
       
       keybindings = {
         "${modifier}+q" = "exec ${terminal}";
@@ -38,15 +38,15 @@ in
       input."type:keyboard" = {
         xkb_layout = "us";
         repeat_delay = "200";
-        accel_profile = "adaptive";
       };
       
       input."type:touchpad" = {
         natural_scroll = "enabled";
       };
       
-      input."epic-mouse-v1" = {
-        pointer_accel = "-0.5";
+      input."type:pointer" = {
+        accel_profile = "adaptive";
+        pointer_accel = "-0.6";
       };
       output."*" = {
         scale = "1";
@@ -124,6 +124,8 @@ in
       client.urgent            $peach    $base $peach $overlay0  $peach
       client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
       client.background        $base
+
+      primary_selection disabled
     '';
   };
 

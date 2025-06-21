@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 {
   home.packages = with pkgs; [
     pipes
@@ -14,7 +14,6 @@
     wechat-uos
     pavucontrol
     hyprshot
-    firefox
   ];
   home.pointerCursor = {
     # name = "BreezeX-RosePine-Linux";
@@ -41,14 +40,6 @@
       background_opacity = 0.9;
     };
   };
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    extraConfig = ''
-      set number relativenumber
-    '';
-  };
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -66,6 +57,12 @@
       "--enable-blink-features=MiddleClickAutoscroll"
       "--test-type"
     ];
+  };
+  programs.firefox = {
+    enable = true;
+    policies = {
+      DisableTelemetry = true;
+    };
   };
   programs.fastfetch = {
     enable = true;
